@@ -184,9 +184,7 @@ Total time: ~20 hours
 
 ## 🔗 Links
 
-- Live App: https://pinolab.vercel.app
-- Verifier Page: https://pinolab.vercel.app/verify
-- Example Round: https://pinolab.vercel.app/verify?roundId=example123
+- Live App: https://plinko-lab-assignment.vercel.app/
 
 ---
 
