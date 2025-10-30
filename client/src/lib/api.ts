@@ -4,8 +4,12 @@ import type { Round } from './types'
 const api = axios.create({
   baseURL:
     import.meta.env.VITE_API_BASE ||
-    (import.meta.env.DEV ? 'http://localhost:4000/api' : 'https://plinko-lab-assignment.onrender.com/api'),
-})
+    (import.meta.env.DEV
+      ? 'http://localhost:4000/api' // 🧩 Local backend during development
+      : 'https://plinko-lab-assignment.onrender.com/api' // 🧩 Render backend in production
+    ),
+});
+
 
 // ✅ For debugging: log base URL once
 console.log('API Base URL:', api.defaults.baseURL)

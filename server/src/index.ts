@@ -9,12 +9,10 @@ const app = express()
 app.use(helmet())
 app.use(express.json())
 
-const allowed = (process.env.ALLOWED_ORIGINS || '').split(',')
 app.use(cors({
-  origin: (origin, cb) => {
-    if (!origin || allowed.includes(origin)) return cb(null, true)
-    cb(new Error('Blocked by CORS'))
-  }
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }))
 
 app.get('/api/health', (_, res) => res.json({ ok: true }))
