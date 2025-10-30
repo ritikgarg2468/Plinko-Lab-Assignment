@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4000',
+        target: 'https://plinko-lab-assignment.onrender.com',
         changeOrigin: true
       }
     }
