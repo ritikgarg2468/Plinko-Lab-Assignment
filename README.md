@@ -185,6 +185,8 @@ Total time: ~20 hours
 ## 🔗 Links
 
 - Live App: https://plinko-lab-assignment.vercel.app/
+- Verifier Page: https://plinko-lab-assignment.vercel.app/verify
+- Example Round (permalink): https://plinko-lab-assignment.vercel.app/verify?roundId=example123
 
 ---
 
