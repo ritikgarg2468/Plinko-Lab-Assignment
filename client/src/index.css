@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.card {
+  @apply bg-slate-900/70 backdrop-blur rounded-2xl shadow-lg border border-slate-800;
+}
+.btn {
+  @apply px-4 py-2 rounded-xl font-semibold bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50;
+}
+.input {
+  @apply bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 w-full outline-none focus:ring-2 focus:ring-indigo-500;
+}
