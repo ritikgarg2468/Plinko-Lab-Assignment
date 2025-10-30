@@ -2,15 +2,23 @@ import axios from 'axios'
 import type { Round } from './types'
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE || '/api'
+  baseURL:
+    import.meta.env.VITE_API_BASE ||
+    (import.meta.env.DEV ? 'http://localhost:4000/api' : 'https://plinko-lab-assignment.onrender.com/api'),
 })
+
+// ✅ For debugging: log base URL once
+console.log('API Base URL:', api.defaults.baseURL)
 
 export async function commitRound() {
   const { data } = await api.post('/rounds/commit')
   return data as { roundId: string; commitHex: string; nonce: string }
 }
 
-export async function startRound(id: string, payload: { clientSeed: string; betCents: number; dropColumn: number }) {
+export async function startRound(
+  id: string,
+  payload: { clientSeed: string; betCents: number; dropColumn: number }
+) {
   const { data } = await api.post(`/rounds/${id}/start`, payload)
   return data as { roundId: string; pegMapHash: string; rows: number; round: Round }
 }
